@@ -1,4 +1,5 @@
 <?php
+//このページが、【PHP/Laravel】03 ControllerとRoutingの関係について理解しよう。の課題です。
 
 namespace App\Http\Controllers\Admin;
 
