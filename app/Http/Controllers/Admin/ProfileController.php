@@ -10,6 +10,7 @@ class ProfileController extends Controller
 {
     public function add()
     {
+        //これは、admiフォルダのprofileフォルダのcreate.blade.phpを指している。
         return view('admin.profile.create');
     }
 
@@ -19,6 +20,7 @@ class ProfileController extends Controller
     }
     public function edit()
     {
+        //これは、admiフォルダのprofileフォルダのedit.blade.phpを指している。
         return view('admin.profile.edit');
     }
 
