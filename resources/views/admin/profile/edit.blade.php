@@ -1,16 +1,17 @@
-<!DOCTYPE html>
-<html>
+{{-- layouts/profile.blade.phpを読み込む --}}
+@extends('layouts.profile')
 
-<head>
-   <meta charset="utf-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-   <title>MyEdit</title>
-</head>
+{{-- admin.blade.phpの@yield('title')に'ニュースの新規作成'を埋め込む --}}
+@section('title', 'エディット画面')
 
-<body>
-   <h1>edit作成画面</h1>
-</body>
-
-</html>
+{{-- admin.blade.phpの@yield('content')に以下のタグを埋め込む --}}
+@section('content')
+   <div class="container">
+      <div class="row">
+         <div class="col-md-8 mx-auto">
+            <h2>My エディット</h2>
+         </div>
+      </div>
+   </div>
+@endsection
