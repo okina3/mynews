@@ -1,10 +1,10 @@
 <?php
-//このページが、【PHP/Laravel】03 ControllerとRoutingの関係について理解しよう。の課題です。
 
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Profile;
 
 class ProfileController extends Controller
 {
@@ -14,10 +14,23 @@ class ProfileController extends Controller
         return view('admin.profile.create');
     }
 
-    public function create()
+    public function create(Request $request)
     {
+        $this->validate($request, Profile::$rules);
+
+        $profile = new Profile;
+        $form = $request->all();
+
+        // フォームから送信されてきた_tokenを削除する
+        unset($form['_token']);
+
+        // データベースに保存する
+        $profile->fill($form);
+        $profile->save();
+
         return redirect('admin/profile/create');
     }
+
     public function edit()
     {
         //これは、admiフォルダのprofileフォルダのedit.blade.phpを指している。
