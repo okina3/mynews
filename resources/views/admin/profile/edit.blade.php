@@ -18,31 +18,36 @@
                <div class="form-group row">
                   <label class="col-md-2">氏名</label>
                   <div class="col-md-10">
-                     <input type="text" class="form-control" name="name" value="{{ old('name') }}">
+                     <input type="text" class="form-control" name="name" value="{{ $profile_form->name }}">
                   </div>
                </div>
 
                <div class="form-group row">
                   <label class="col-md-2">性別</label>
                   <div class="col-md-10">
-                     <input id="gender_male" type="radio" name="gender" value="male" checked>
+
+                     <input id="gender_male" type="radio" name="gender" value="{{ $profile_form->gender }}"
+                        {{ $profile_form->gender === 'male' ? 'checked' : '' }}>
                      <label for="gender_male">男性</label>
-                     <input id="gender_female" type="radio" name="gender" value="female">
+
+                     <input id="gender_female" type="radio" name="gender" value="{{ $profile_form->gender }}"
+                        {{ $profile_form->gender === 'female' ? 'checked' : '' }}>
                      <label for="gender_female">女性</label>
+                     
                   </div>
                </div>
 
                <div class="form-group row">
                   <label class="col-md-2">趣味</label>
                   <div class="col-md-10">
-                     <textarea class="form-control" name="hobby" rows="8">{{ old('hobby') }}</textarea>
+                     <textarea class="form-control" name="hobby" rows="8">{{ $profile_form->hobby }}</textarea>
                   </div>
                </div>
 
                <div class="form-group row">
                   <label class="col-md-2">自己紹介欄</label>
                   <div class="col-md-10">
-                     <textarea class="form-control" name="introduction" rows="8">{{ old('introduction') }}</textarea>
+                     <textarea class="form-control" name="introduction" rows="8">{{ $profile_form->introduction }}</textarea>
                   </div>
                </div>
 
