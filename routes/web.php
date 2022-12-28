@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\AAAController;
 use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\NewsController as PublicNewsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,3 +46,5 @@ Route::controller(ProfileController::class)->prefix('admin')->name('admin.')->mi
     Route::post('profile/edit', 'update')->name('profile.update');
     Route::get('profile/delete', 'delete')->name('profile.delete');
 });
+
+Route::get('/', [PublicNewsController::class, 'index'])->name('news.index');
