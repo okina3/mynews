@@ -47,7 +47,8 @@
                </div>
 
                @csrf
-               <input type="submit" class="btn btn-primary" value="更新">
+               <input type="submit" class="btn btn-primary" value="登録">
+               <a href="{{ route('admin.profile.index') }}" class="btn btn-primary">戻る</a>
             </form>
          </div>
       </div>

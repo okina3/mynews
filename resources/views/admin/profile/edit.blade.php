@@ -33,7 +33,7 @@
                      <input id="gender_female" type="radio" name="gender" value="{{ $profile_form->gender }}"
                         {{ $profile_form->gender === 'female' ? 'checked' : '' }}>
                      <label for="gender_female">女性</label>
-                     
+
                   </div>
                </div>
 
@@ -50,9 +50,12 @@
                      <textarea class="form-control" name="introduction" rows="8">{{ $profile_form->introduction }}</textarea>
                   </div>
                </div>
-
-               @csrf
-               <input type="submit" class="btn btn-primary" value="更新">
+               <div class="col-md-10">
+                  <input type="hidden" name="id" value="{{ $profile_form->id }}">
+                  @csrf
+                  <input type="submit" class="btn btn-primary" value="更新">
+                  <a href="{{ route('admin.profile.index') }}" class="btn btn-primary">戻る</a>
+               </div>
             </form>
          </div>
       </div>
